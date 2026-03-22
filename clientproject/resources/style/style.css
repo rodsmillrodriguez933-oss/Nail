@@ -1,0 +1,8 @@
+*{padding: auto;
+margin: auto;}
+table, th, td {
+    border-collapse: collapse;
+    width: 600px;
+    text-align: center;
+    border: 1px solid black;
+}
