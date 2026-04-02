@@ -13,7 +13,7 @@ include("../../connect/conn/database.php");
     <title>Document</title>
   </head>
   <body>
-    <div><a href=" /clientproject/home.php"><button>Home</button></a></div>
+    <div><a href=" /clientproject/index.php"><button>Home</button></a></div>
      <div><a href="add.php"><button>Add New Record</button></a></div>
     <!-- CRUD table -->
     <div>

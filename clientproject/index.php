@@ -10,8 +10,7 @@ session_start()
 
         unset($_SESSION['flash']);
     }
-    ?>
-<?php
+    
         if(empty($_SESSION['user'])){
     ?>
 <!DOCTYPE html>
@@ -19,28 +18,56 @@ session_start()
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="resources/style/main_style.css">
+    <link rel="stylesheet" href="resources/style/style.css">
+    <title>Cha's Nails</title>
 </head>
 <body>
+<div class="reg">
+    <form action="code.php" method="POST">
+        <input type="hidden" name="action" value="register">
+        <h2 id="welcome">
+            <img class="banner-logo" src="resources/style/photos/logo.jpg" alt="Brand Logo">
+            Welcome to Polished By Cha
+        </h2>
+        <h2>Register</h2>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username"><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password"><br>
+        <button type="submit" name="submit">Register</button> 
+    </form>
+</div>
 
- <form action="code.php" method="POST">
-    <input type="hidden" name="action" value="register">
-    <h2>Welcome to the Application</h2>
-    <h2>Register</h2>
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username"><br>
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password"><br>
-    <input type="submit" value="register"> 
-</form>
-
+Already have an account? <a href="login.php">Login here!</a>
 </body>
 </html>
 
-already have an account? <a href="login.php">Login here</a>
+
 <?php
         } else {
-            header("Location: home.php");
-            exit();
-        }
+             
+
     ?>
+   <div class="header">
+        <h1>Project</h1>
+        <form action="code.php" method="POST">
+            <input type="hidden" name="action" value="logout">
+            <button type="submit">Logout</button>
+        </form>
+    </div>  
+    <div><a href="crud/table/table.php"><button>View scheduling</button></a></div>
+    <div><a href="features/coolstuff/search.php"><button>Search</button></a></div>
+    <div><a href="features/coolstuff/salesreport.php"><button>Sales report</button></a></div>
+
+
+    
+    <form action="code.php" method="POST">
+         <input type="hidden" name="action" value="users">
+            <button type="submit">users</button>
+    </form>
+<?php   
+        }
+       ?>
+    </body>
+</html>

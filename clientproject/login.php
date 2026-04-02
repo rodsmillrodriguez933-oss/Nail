@@ -5,7 +5,7 @@ session_start()
  <?php
     if (!empty($_SESSION['flash'])){
         $type = $_SESSION['flash']['type'];
-        $text = $_SESSION['flash']['type'];
+        $text = $_SESSION['flash']['text'];
 
         echo "<div class='msg " . htmlspecialchars($type) . "'>" . htmlspecialchars($text). "</div>";
 
@@ -14,7 +14,7 @@ session_start()
     ?>
 <?php
         if(empty($_SESSION['user'])){
-    ?>
+    ?>  
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,14 +30,14 @@ session_start()
     <input type="text" id="username" name="username"><br>
     <label for="password">Password:</label>
     <input type="password" id="password" name="password"><br>
-    <input type="submit" value="login">
+    <button type="submit" name="submit">Login</button>
 </form>
 
 </body>
 </html>
 <?php
         } else {
-            header("Location: home.php");
+            header("Location: index.php");
             exit();
         }
 ?>
